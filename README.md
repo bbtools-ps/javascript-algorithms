@@ -172,16 +172,6 @@ Implementation of various tree traversal algorithms including:
 
 These algorithms are fundamental for navigating and processing tree data structures.
 
-Converts the Arabic numbers to roman and vice versa.
-For converting from Arabic to roman use function _convertToRoman(num)_ with the number as a parameter and for converting from roman to Arabic use function _convertToArabic(str)_ with the string as a parameter that is passed to the function. Both functions return a number or a letter, depending on which function you use.
-
-```
-console.log(convertToRoman(3999));
-// Output: MMMCMXCIX
-console.log(convertToArabic("MMMCMXCIX"));
-// Output: 3999
-```
-
 ### Palindrome checker
 
 Checks if a word or a sentence is a palindrome. A palindrome is a word or a sentence that's spelled the same way both forward and backward, ignoring the punctuation, case, and spacing. The function works by removing all non-alphanumeric characters (punctuation, spaces, and symbols) and turns everything into the same case (lower or upper case) to check for palindromes. The result of the function is a boolean (true or false) and it depends if the palindrome is found or not.
