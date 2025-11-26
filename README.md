@@ -1,8 +1,8 @@
-# Javascript Scripts
+# JavaScript Algorithms & Data Structures
 
-Here is the list of various scripts written using javascript. They are made through the exploration of the language so you are free to use them as you wish.
+A collection of JavaScript implementations of common algorithms and data structures. This repository includes sorting algorithms, search algorithms, data structures (trees, linked lists, heaps, queues), and various utility functions for learning and reference.
 
-## The list of scripts
+## Contents
 
 1. [Binary Heaps](#binary-heaps)
 2. [Binary Search Tree](#binary-search-tree)
