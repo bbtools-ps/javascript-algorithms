@@ -1,7 +1,21 @@
-function collectOddValues(arr) {
+// Iterative solution
+function collectOddValuesIterative(arr) {
   let result = [];
 
-  function collect(input) {
+  arr.forEach((item) => {
+    if (item % 2 !== 0) {
+      result.push(item);
+    }
+  });
+
+  return result;
+}
+
+// Recursive solution
+function collectOddValuesRecursive(arr) {
+  let result = [];
+
+  (function collect(input) {
     if (input.length === 0) return;
 
     if (input[0] % 2 !== 0) {
@@ -9,9 +23,7 @@ function collectOddValues(arr) {
     }
 
     collect(input.slice(1));
-  }
-
-  collect(arr);
+  })(arr);
 
   return result;
 }
