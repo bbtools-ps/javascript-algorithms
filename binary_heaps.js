@@ -52,7 +52,7 @@ class MaxBinaryHeap {
       }
 
       if (rightChildIdx < this.#values.length) {
-        rightChild = this.#values[leftChildIdx];
+        rightChild = this.#values[rightChildIdx];
         if (
           (swapIdx === null && rightChild > element) ||
           (swapIdx !== null && rightChild > leftChild)
