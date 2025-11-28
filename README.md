@@ -13,7 +13,7 @@ A collection of JavaScript implementations of common algorithms and data structu
 7. [Factorial](#factorial)
 8. [Fix Runts](#fix-runts)
 9. [Graphs](#graphs)
-10. [Merge Sort](#merge-sort))
+10. [Merge Sort](#merge-sort)
 11. [Palindrome Checker](#palindrome-checker)
 12. [Priority Queue](#priority-queue)
 13. [Quick Sort](#quick-sort)
