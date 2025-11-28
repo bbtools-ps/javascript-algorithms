@@ -1,12 +1,24 @@
+/**
+ * Graph data structure using an adjacency list representation
+ */
 class Graph {
   #adjacencyList = {};
 
+  /**
+   * Adds a new vertex to the graph
+   * @param {string} vertex - The vertex to add
+   */
   addVertex(vertex) {
     if (this.#adjacencyList[vertex] !== undefined) return;
 
     this.#adjacencyList[vertex] = [];
   }
 
+  /**
+   * Adds an undirected edge between two vertices
+   * @param {string} vertex1 - The first vertex
+   * @param {string} vertex2 - The second vertex
+   */
   addEdge(vertex1, vertex2) {
     if (this.#adjacencyList[vertex1] === undefined || this.#adjacencyList[vertex1] === undefined)
       return;
@@ -15,6 +27,11 @@ class Graph {
     this.#adjacencyList[vertex2].push(vertex1);
   }
 
+  /**
+   * Removes an edge between two vertices
+   * @param {string} vertex1 - The first vertex
+   * @param {string} vertex2 - The second vertex
+   */
   removeEdge(vertex1, vertex2) {
     if (this.#adjacencyList[vertex1] === undefined || this.#adjacencyList[vertex1] === undefined)
       return;
@@ -27,6 +44,10 @@ class Graph {
     );
   }
 
+  /**
+   * Removes a vertex and all its edges from the graph
+   * @param {string} vertex - The vertex to remove
+   */
   removeVertex(vertex) {
     if (this.#adjacencyList[vertex] === undefined) return;
 
@@ -37,6 +58,11 @@ class Graph {
     delete this.#adjacencyList[vertex];
   }
 
+  /**
+   * Performs depth-first traversal recursively starting from a vertex
+   * @param {string} start - The starting vertex
+   * @returns {string[]} Array of vertices in traversal order
+   */
   depthFirstRecursive(start) {
     const results = [];
     const visited = new Set();
@@ -58,6 +84,11 @@ class Graph {
     return results;
   }
 
+  /**
+   * Performs depth-first traversal iteratively starting from a vertex
+   * @param {string} start - The starting vertex
+   * @returns {string[]} Array of vertices in traversal order
+   */
   depthFirstIterative(start) {
     const stack = [start];
     const visited = new Set([start]);
@@ -78,6 +109,11 @@ class Graph {
     return results;
   }
 
+  /**
+   * Performs breadth-first traversal starting from a vertex
+   * @param {string} start - The starting vertex
+   * @returns {string[]} Array of vertices in traversal order
+   */
   breadthFirst(start) {
     const queue = [start];
     const results = [];
@@ -99,18 +135,18 @@ class Graph {
   }
 }
 
-const graph = new Graph();
-graph.addVertex("A");
-graph.addVertex("B");
-graph.addVertex("C");
-graph.addVertex("D");
-graph.addVertex("E");
-graph.addVertex("F");
-graph.addEdge("A", "B");
-graph.addEdge("A", "C");
-graph.addEdge("B", "D");
-graph.addEdge("C", "E");
-graph.addEdge("D", "E");
-graph.addEdge("D", "F");
-graph.addEdge("E", "F");
-graph.breadthFirst("A");
+// const graph = new Graph();
+// graph.addVertex("A");
+// graph.addVertex("B");
+// graph.addVertex("C");
+// graph.addVertex("D");
+// graph.addVertex("E");
+// graph.addVertex("F");
+// graph.addEdge("A", "B");
+// graph.addEdge("A", "C");
+// graph.addEdge("B", "D");
+// graph.addEdge("C", "E");
+// graph.addEdge("D", "E");
+// graph.addEdge("D", "F");
+// graph.addEdge("E", "F");
+// graph.breadthFirst("A");

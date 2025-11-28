@@ -13,20 +13,33 @@ stackArr.push("youtube");
 stackArr.pop();
 
 // Linked list example
+/**
+ * Represents a node in a linked list-based stack or queue
+ */
 class Node {
   next = null;
 
+  /**
+   * Creates a new node
+   * @param {*} data - The data to store in the node
+   */
   constructor(data) {
     this.data = data;
   }
 }
 
+/**
+ * Stack data structure - LIFO (Last In First Out)
+ */
 class Stack {
   #first = null;
   #last = null;
   #size = 0;
 
-  // Adding
+  /**
+   * Adds a new element to the top of the stack
+   * @param {*} data - The data to add
+   */
   push(data) {
     const newNode = new Node(data);
 
@@ -41,7 +54,10 @@ class Stack {
     this.#size++;
   }
 
-  // Removing
+  /**
+   * Removes and returns the top element from the stack
+   * @returns {Node|undefined} The removed node, or undefined if stack is empty
+   */
   pop() {
     if (!this.#first) return undefined;
 
@@ -80,11 +96,18 @@ queueArr.shift();
 queueArr.shift();
 
 // Linked list example
+/**
+ * Queue data structure - FIFO (First In First Out)
+ */
 class Queue {
   #first = null;
   #last = null;
   #size = 0;
 
+  /**
+   * Adds a new element to the end of the queue
+   * @param {*} data - The data to add
+   */
   enqueue(data) {
     const newNode = new Node(data);
 
@@ -99,6 +122,10 @@ class Queue {
     this.#size++;
   }
 
+  /**
+   * Removes and returns the first element from the queue
+   * @returns {Node|undefined} The removed node, or undefined if queue is empty
+   */
   dequeue() {
     if (!this.#first) return undefined;
 
@@ -114,8 +141,8 @@ class Queue {
   }
 }
 
-const queueList = new Queue();
-queueList.enqueue("First");
-queueList.enqueue("Second");
-queueList.dequeue();
-console.log("queue list:", queueList);
+// const queueList = new Queue();
+// queueList.enqueue("First");
+// queueList.enqueue("Second");
+// queueList.dequeue();
+// console.log("queue list:", queueList);

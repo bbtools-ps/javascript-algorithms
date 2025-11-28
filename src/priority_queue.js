@@ -1,13 +1,29 @@
+/**
+ * Represents a node in a priority queue with a value and priority
+ */
 class Node {
+  /**
+   * Creates a new priority queue node
+   * @param {*} value - The value to store
+   * @param {number} priority - The priority (lower number = higher priority)
+   */
   constructor(value, priority) {
     this.value = value;
     this.priority = priority;
   }
 }
 
+/**
+ * Priority Queue implementation using a min binary heap
+ */
 class PriorityQueue {
   #values = [];
 
+  /**
+   * Swaps two elements in the queue
+   * @param {number} firstIdx - Index of the first element
+   * @param {number} secondIdx - Index of the second element
+   */
   swap(firstIdx, secondIdx) {
     [this.#values[firstIdx], this.#values[secondIdx]] = [
       this.#values[secondIdx],
@@ -15,6 +31,11 @@ class PriorityQueue {
     ];
   }
 
+  /**
+   * Adds a value to the queue with a given priority
+   * @param {*} value - The value to add
+   * @param {number} priority - The priority (lower number = higher priority)
+   */
   enqueue(value, priority) {
     const newNode = new Node(value, priority);
     this.#values.push(newNode);
@@ -35,6 +56,10 @@ class PriorityQueue {
     }
   }
 
+  /**
+   * Removes and returns the highest priority element from the queue
+   * @returns {Node|undefined} The highest priority node, or undefined if empty
+   */
   dequeue() {
     if (this.#values.length === 0) return undefined;
     if (this.#values.length === 1) return this.#values.pop();
@@ -79,11 +104,11 @@ class PriorityQueue {
   }
 }
 
-const ER = new PriorityQueue();
-ER.enqueue("common cold", 5);
-ER.enqueue("gunshot wound", 1);
-ER.enqueue("high fever", 4);
-ER.enqueue("broken arm", 2);
-ER.enqueue("glass in foot", 3);
-const item = ER.dequeue();
-console.log(ER, item);
+// const priorityQueue = new PriorityQueue();
+// priorityQueue.enqueue("common cold", 5);
+// priorityQueue.enqueue("gunshot wound", 1);
+// priorityQueue.enqueue("high fever", 4);
+// priorityQueue.enqueue("broken arm", 2);
+// priorityQueue.enqueue("glass in foot", 3);
+// const item = priorityQueue.dequeue();
+// console.log(priorityQueue, item);

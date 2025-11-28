@@ -1,11 +1,11 @@
-// Function that converts the string to title case. For example "title case" => "Title Case". Returns: string
+/**
+ * Converts a string to title case (capitalizes the first letter of each word)
+ * @param {string} str - The string to convert
+ * @returns {string} The string in title case format
+ */
 const titleCase = (str) => {
-    return str.toLowerCase().replace(/\b[a-z]/g, (L) => L.toUpperCase());
+  return str.toLowerCase().replace(/\b[a-z]/g, (L) => L.toUpperCase());
 };
 
-(function () {
-    let str = "title  case here";
-
-    console.log(titleCase(str));
-    // Output: Title Case Here
-})();
+// const str = "title  case here";
+// console.log(titleCase(str));

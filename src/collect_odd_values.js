@@ -1,4 +1,8 @@
-// Iterative solution
+/**
+ * Collects all odd values from an array using an iterative approach
+ * @param {number[]} arr - The array to process
+ * @returns {number[]} An array containing only the odd values
+ */
 function collectOddValuesIterative(arr) {
   let result = [];
 
@@ -11,7 +15,11 @@ function collectOddValuesIterative(arr) {
   return result;
 }
 
-// Recursive solution
+/**
+ * Collects all odd values from an array using a recursive approach
+ * @param {number[]} arr - The array to process
+ * @returns {number[]} An array containing only the odd values
+ */
 function collectOddValuesRecursive(arr) {
   let result = [];
 

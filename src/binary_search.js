@@ -1,3 +1,9 @@
+/**
+ * Performs binary search on a sorted array to find the index of a target element
+ * @param {Array} arr - The sorted array to search in
+ * @param {*} elem - The element to search for
+ * @returns {number} The index of the element if found, -1 otherwise
+ */
 function binarySearch(arr, elem) {
   let start = 0;
   let end = arr.length - 1;

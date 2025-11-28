@@ -1,17 +1,31 @@
+/**
+ * Represents a node in a doubly linked list
+ */
 class Node {
   next = null;
   prev = null;
 
+  /**
+   * Creates a new node
+   * @param {*} data - The data to store in the node
+   */
   constructor(data) {
     this.data = data;
   }
 }
 
+/**
+ * Doubly Linked List data structure with forward and backward traversal
+ */
 class DoublyLinkedList {
   #head = null;
   #tail = null;
   #size = 0;
 
+  /**
+   * Adds a new node to the end of the list
+   * @param {*} data - The data to add
+   */
   push(data) {
     const newNode = new Node(data);
 
@@ -27,6 +41,10 @@ class DoublyLinkedList {
     this.#size++;
   }
 
+  /**
+   * Removes and returns the last node from the list
+   * @returns {Node|undefined} The removed node, or undefined if list is empty
+   */
   pop() {
     if (!this.#head) return undefined;
 
@@ -45,6 +63,10 @@ class DoublyLinkedList {
     return current;
   }
 
+  /**
+   * Removes and returns the first node from the list
+   * @returns {Node|undefined} The removed node, or undefined if list is empty
+   */
   shift() {
     if (!this.#head) return undefined;
 
@@ -63,6 +85,10 @@ class DoublyLinkedList {
     return current;
   }
 
+  /**
+   * Adds a new node to the beginning of the list
+   * @param {*} data - The data to add
+   */
   unshift(data) {
     const current = new Node(data);
 
@@ -78,6 +104,11 @@ class DoublyLinkedList {
     this.#size++;
   }
 
+  /**
+   * Retrieves a node at the specified index
+   * @param {number} index - The index of the node to retrieve
+   * @returns {Node|undefined} The node at the index, or undefined if invalid
+   */
   get(index) {
     if (index < 0 || index >= this.#size) return undefined;
 
@@ -106,6 +137,12 @@ class DoublyLinkedList {
     return current;
   }
 
+  /**
+   * Updates the data of a node at the specified index
+   * @param {number} index - The index of the node to update
+   * @param {*} data - The new data value
+   * @returns {boolean} True if successful, false otherwise
+   */
   set(index, data) {
     const item = this.get(index);
 
@@ -115,6 +152,12 @@ class DoublyLinkedList {
     return true;
   }
 
+  /**
+   * Inserts a new node at the specified index
+   * @param {number} index - The index at which to insert
+   * @param {*} data - The data to insert
+   * @returns {boolean} True if successful, false otherwise
+   */
   insert(index, data) {
     if (index < 0 || index > this.#size) return false;
 
@@ -136,6 +179,11 @@ class DoublyLinkedList {
     return true;
   }
 
+  /**
+   * Removes and returns a node at the specified index
+   * @param {number} index - The index of the node to remove
+   * @returns {Node|undefined} The removed node, or undefined if invalid
+   */
   remove(index) {
     if (index < 0 || index >= this.#size) return undefined;
 
@@ -161,17 +209,17 @@ class DoublyLinkedList {
   }
 }
 
-const list = new DoublyLinkedList();
-list.push("Harry");
-list.push("Ron");
-list.push("Hermione");
-list.pop();
-list.shift();
-list.unshift("Dumbledore");
-list.push("Snape");
-const item = list.get(2);
-console.log(item);
-list.set(2, "Severus");
-list.insert(1, "Tonks");
-list.remove(0);
-console.log(list);
+// const list = new DoublyLinkedList();
+// list.push("Harry");
+// list.push("Ron");
+// list.push("Hermione");
+// list.pop();
+// list.shift();
+// list.unshift("Dumbledore");
+// list.push("Snape");
+// const item = list.get(2);
+// console.log(item);
+// list.set(2, "Severus");
+// list.insert(1, "Tonks");
+// list.remove(0);
+// console.log(list);

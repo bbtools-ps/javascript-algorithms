@@ -1,15 +1,30 @@
+/**
+ * Represents a node in a binary search tree
+ */
 class Node {
   left = null;
   right = null;
 
+  /**
+   * Creates a new node
+   * @param {*} value - The value to store in the node
+   */
   constructor(value) {
     this.value = value;
   }
 }
 
+/**
+ * Binary Search Tree with various traversal methods
+ */
 class BinarySearchTree {
   #root = null;
 
+  /**
+   * Inserts a new value into the binary search tree
+   * @param {*} value - The value to insert
+   * @returns {undefined} Returns undefined if value already exists
+   */
   insert(value) {
     const newNode = new Node(value);
 
@@ -41,6 +56,11 @@ class BinarySearchTree {
     }
   }
 
+  /**
+   * Checks if a value exists in the tree
+   * @param {*} value - The value to search for
+   * @returns {boolean} True if value exists, false otherwise
+   */
   contains(value) {
     if (this.#root === null) return null;
 
@@ -60,7 +80,10 @@ class BinarySearchTree {
     return false;
   }
 
-  // BFS (Breadth First Search)
+  /**
+   * Performs Breadth First Search traversal on the tree
+   * @returns {Array} Array of node values in BFS order
+   */
   BFS() {
     const data = [];
     const queue = [];
@@ -77,7 +100,10 @@ class BinarySearchTree {
 
     return data;
   }
-  // DFS (Depth First Search) - Pre Order
+  /**
+   * Performs Depth First Search Pre-Order traversal (root, left, right)
+   * @returns {Array} Array of node values in pre-order
+   */
   DFSPreOrder() {
     const data = [];
 
@@ -91,7 +117,10 @@ class BinarySearchTree {
 
     return data;
   }
-  // DFS (Depth First Search) - Post Order
+  /**
+   * Performs Depth First Search Post-Order traversal (left, right, root)
+   * @returns {Array} Array of node values in post-order
+   */
   DFSPostOrder() {
     const data = [];
 
@@ -105,7 +134,10 @@ class BinarySearchTree {
 
     return data;
   }
-  // DFS (Depth First Search) - In Order
+  /**
+   * Performs Depth First Search In-Order traversal (left, root, right)
+   * @returns {Array} Array of node values in sorted order
+   */
   DFSInOrder() {
     const data = [];
 
@@ -121,12 +153,12 @@ class BinarySearchTree {
   }
 }
 
-const tree = new BinarySearchTree();
-tree.insert(10);
-tree.insert(6);
-tree.insert(3);
-tree.insert(8);
-tree.insert(15);
-tree.insert(20);
-const bfs = tree.DFSInOrder();
-console.log(tree, bfs);
+// const tree = new BinarySearchTree();
+// tree.insert(10);
+// tree.insert(6);
+// tree.insert(3);
+// tree.insert(8);
+// tree.insert(15);
+// tree.insert(20);
+// const bfs = tree.DFSInOrder();
+// console.log(tree, bfs);
