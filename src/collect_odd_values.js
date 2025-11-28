@@ -8,7 +8,7 @@ function collectOddValues(arr) {
       result.push(input[0]);
     }
 
-    helper(input.slice(1));
+    collect(input.slice(1));
   }
 
   collect(arr);
