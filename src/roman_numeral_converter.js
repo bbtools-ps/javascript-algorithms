@@ -4,7 +4,7 @@
  * @returns {number} The Arabic number equivalent
  */
 function convertToArabic(str) {
-  const charMap = {
+  const romanValues = {
     I: 1,
     V: 5,
     X: 10,
@@ -19,7 +19,7 @@ function convertToArabic(str) {
   const upperStr = str.toUpperCase();
 
   for (let i = upperStr.length - 1; i >= 0; i--) {
-    currentNumber = charMap[upperStr[i]] ?? 0;
+    currentNumber = romanValues[upperStr[i]] ?? 0;
     if (currentNumber < previousNumber) {
       result -= currentNumber;
     } else {
@@ -112,10 +112,9 @@ function convertToRoman(num) {
 
   for (let i = numbers.length - 1; i >= 0; i--) {
     const quotient = Math.floor(remainingNum / numbers[i].value);
-    // Create the result by adding the strings using the custom function for a string repeat
     result += stringRepeat(numbers[i].roman, quotient);
 
-    // Create the result by adding the strings using the string.repeat() function. ES2015
+    // ES2015
     // result += numbers[i].roman.repeat(quotient);
 
     remainingNum -= quotient * numbers[i].value;
