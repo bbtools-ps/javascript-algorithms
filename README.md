@@ -12,18 +12,20 @@ A collection of JavaScript implementations of common algorithms and data structu
 6. [Doubly Linked List](#doubly-linked-list)
 7. [Factorial](#factorial)
 8. [Fix Runts](#fix-runts)
-9. [Merge Sort](#merge-sort)
-10. [Palindrome Checker](#palindrome-checker)
-11. [Priority Queue](#priority-queue)
-12. [Quick Sort](#quick-sort)
-13. [Radix Sort](#radix-sort)
-14. [Roman Numeral Converter](#roman-numeral-converter)
-15. [ROT13](#rot13)
-16. [Singly Linked List](#singly-linked-list)
-17. [Stacks & Queues](#stacks-queues)
-18. [Telephone Checker](#telephone-checker)
-19. [Title Case](#title-case)
-20. [Tree Traversal](#tree-traversal)
+9. [Graphs](#graphs)
+10. [Merge Sort](#merge-sort))
+11. [Palindrome Checker](#palindrome-checker)
+12. [Priority Queue](#priority-queue)
+13. [Quick Sort](#quick-sort)
+14. [Radix Sort](#radix-sort)
+15. [Roman Numeral Converter](#roman-numeral-converter)
+16. [ROT13](#rot13)
+17. [Shortest Path (Dijkstra's Algorithm)](#shortest-path-dijkstras-algorithm)
+18. [Singly Linked List](#singly-linked-list)
+19. [Stacks & Queues](#stacks-queues)
+20. [Telephone Checker](#telephone-checker)
+21. [Title Case](#title-case)
+22. [Tree Traversal](#tree-traversal)
 
 ## Details
 
@@ -87,6 +89,16 @@ console.log(fixRunts(str))
 // Output: 640K ought to be enough for anybody. (Bill Gates, 1981) The best thing about a boolean is even if you are wrong, you are only off by a bit. (Anonymous) I think Microsoft named .Net so it wouldn't show up in a Unix directory listing. (Oktal) Come to think of it, there are already a million monkeys on a million typewriters, and Usenet is nothing like Shakespeare. (Blair&nbsp;Houghton)
 ```
 
+### Graphs
+
+Implementation of an undirected graph data structure using an adjacency list representation. Includes methods for adding/removing vertices and edges, as well as traversal algorithms:
+
+- **Depth-First Search (Recursive)**: Explores as far as possible along each branch before backtracking
+- **Depth-First Search (Iterative)**: Uses a stack to traverse the graph depth-first
+- **Breadth-First Search**: Uses a queue to visit nodes level by level
+
+Graphs are fundamental data structures used to represent networks, relationships, and connections between entities.
+
 ### Merge Sort
 
 A divide-and-conquer sorting algorithm that divides the input array into two halves, recursively sorts them, and then merges the sorted halves. Has a time complexity of O(n log n) and is stable.
@@ -132,6 +144,17 @@ A simple letter substitution cipher that replaces a letter with the letter 13 po
 console.log(rot13("SERR PBQR PNZC"));
 // Output: FREE CODE CAMP
 ```
+
+### Shortest Path (Dijkstra's Algorithm)
+
+Implementation of Dijkstra's algorithm for finding the shortest path between nodes in a weighted graph. Uses a priority queue (min-heap) to efficiently select the next node with the smallest distance. The algorithm:
+
+1. Initializes distances from the start node (0 for start, Infinity for others)
+2. Uses a priority queue to process nodes in order of their distance
+3. For each node, updates distances to neighbors if a shorter path is found
+4. Tracks the previous node in each shortest path to reconstruct the final route
+
+Returns an array representing the shortest path from the start to the end node. Essential for navigation systems, network routing, and optimization problems.
 
 ### Singly Linked List
 
