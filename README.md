@@ -20,12 +20,13 @@ A collection of JavaScript implementations of common algorithms and data structu
 14. [Radix Sort](#radix-sort)
 15. [Roman Numeral Converter](#roman-numeral-converter)
 16. [ROT13](#rot13)
-17. [Shortest Path (Dijkstra's Algorithm)](#shortest-path-dijkstras-algorithm)
-18. [Singly Linked List](#singly-linked-list)
-19. [Stacks & Queues](#stacks-queues)
-20. [Telephone Checker](#telephone-checker)
-21. [Title Case](#title-case)
-22. [Tree Traversal](#tree-traversal)
+17. [Segment Image](#segment-image)
+18. [Shortest Path (Dijkstra's Algorithm)](#shortest-path-dijkstras-algorithm)
+19. [Singly Linked List](#singly-linked-list)
+20. [Stacks & Queues](#stacks-queues)
+21. [Telephone Checker](#telephone-checker)
+22. [Title Case](#title-case)
+23. [Tree Traversal](#tree-traversal)
 
 ## Details
 
@@ -143,6 +144,29 @@ A simple letter substitution cipher that replaces a letter with the letter 13 po
 ```
 console.log(rot13("SERR PBQR PNZC"));
 // Output: FREE CODE CAMP
+```
+
+### Segment Image
+
+Segments a 2D image array by finding all connected regions of a specific value using Breadth-First Search (BFS). This algorithm identifies connected components in a grid where cells are considered connected if they share an edge (4-directional connectivity: up, down, left, right).
+
+The `segmentByValue` function takes a 2D array and a target value, then returns all segments where each segment is a group of connected cells with that value. This is useful for image processing tasks like blob detection, region labeling, and pattern recognition.
+
+```
+const img = [
+  [0, 1, 0],
+  [0, 1, 1],
+  [1, 0, 0]
+];
+
+const segments = segmentByValue(img, 1); // Find all segments of 1s
+console.log(segments);
+// Output: [[[0,1], [1,1], [1,2]], [[2,0]]]
+// Two separate segments: one with three connected 1s, one with a single 1
+
+const zeroSegments = segmentByValue(img, 0); // Find all segments of 0s
+console.log(zeroSegments);
+// Output: [[[0,0], [1,0]], [[0,2], [1,2], [2,1], [2,2]]]
 ```
 
 ### Shortest Path (Dijkstra's Algorithm)
