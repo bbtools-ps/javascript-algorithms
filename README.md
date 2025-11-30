@@ -7,26 +7,27 @@ A collection of JavaScript implementations of common algorithms and data structu
 1. [Binary Heaps](#binary-heaps)
 2. [Binary Search Tree](#binary-search-tree)
 3. [Binary Search](#binary-search)
-4. [Collect Odd Values](#collect-odd-values)
-5. [Decimals Fix](#decimals-fix)
-6. [Doubly Linked List](#doubly-linked-list)
-7. [Factorial](#factorial)
-8. [Fix Runts](#fix-runts)
-9. [Graphs](#graphs)
-10. [Merge Sort](#merge-sort)
-11. [Palindrome Checker](#palindrome-checker)
-12. [Priority Queue](#priority-queue)
-13. [Quick Sort](#quick-sort)
-14. [Radix Sort](#radix-sort)
-15. [Roman Numeral Converter](#roman-numeral-converter)
-16. [ROT13](#rot13)
-17. [Segment Image](#segment-image)
-18. [Shortest Path (Dijkstra's Algorithm)](#shortest-path-dijkstras-algorithm)
-19. [Singly Linked List](#singly-linked-list)
-20. [Stacks & Queues](#stacks-queues)
-21. [Telephone Checker](#telephone-checker)
-22. [Title Case](#title-case)
-23. [Tree Traversal](#tree-traversal)
+4. [Cash Register](#cash-register)
+5. [Collect Odd Values](#collect-odd-values)
+6. [Decimals Fix](#decimals-fix)
+7. [Doubly Linked List](#doubly-linked-list)
+8. [Factorial](#factorial)
+9. [Fix Runts](#fix-runts)
+10. [Graphs](#graphs)
+11. [Merge Sort](#merge-sort)
+12. [Palindrome Checker](#palindrome-checker)
+13. [Priority Queue](#priority-queue)
+14. [Quick Sort](#quick-sort)
+15. [Radix Sort](#radix-sort)
+16. [Roman Numeral Converter](#roman-numeral-converter)
+17. [ROT13](#rot13)
+18. [Segment Image](#segment-image)
+19. [Shortest Path (Dijkstra's Algorithm)](#shortest-path-dijkstras-algorithm)
+20. [Singly Linked List](#singly-linked-list)
+21. [Stacks & Queues](#stacks-queues)
+22. [Telephone Checker](#telephone-checker)
+23. [Title Case](#title-case)
+24. [Tree Traversal](#tree-traversal)
 
 ## Details
 
@@ -45,6 +46,43 @@ An efficient algorithm for finding a target value within a sorted array. Works b
 ```
 console.log(binarySearch([1, 2, 3, 4, 5, 6, 7, 8, 9], 5));
 // Output: 4 (index of the value)
+```
+
+### Cash Register
+
+A complete cash register system that manages transactions, calculates change, and tracks drawer contents. The `CashRegister` class uses a greedy algorithm to provide change using the largest denominations first, and handles all calculations in cents to avoid floating-point errors.
+
+Features:
+
+- **Transaction Processing**: Validates payment, calculates change, and updates drawer
+- **Change Calculation**: Uses greedy algorithm with largest denominations first
+- **Error Handling**: Detects insufficient payment or inability to make proper change
+- **Rollback Support**: Restores drawer state if change cannot be made
+- **Precision**: All calculations done in cents to avoid floating-point issues
+
+```
+const cashRegister = new CashRegister({
+  100: 5,   // 5 x $100 bills
+  50: 10,   // 10 x $50 bills
+  20: 20,   // 20 x $20 bills
+  10: 15,
+  5: 20,
+  1: 50
+});
+
+// Process a transaction
+const change = cashRegister.processTransaction(47, { 100: 1 });
+console.log(change);
+// Output: { 50: 1, 1: 3 } - Returns one $50 and three $1 bills
+
+// Exact payment
+const result = cashRegister.processTransaction(20, { 20: 1 });
+console.log(result);
+// Output: "Exact! Here you go."
+
+// Check drawer contents and total
+console.log(cashRegister.getDrawerContents());
+console.log(cashRegister.getTotal());
 ```
 
 ### Collect Odd Values
