@@ -52,28 +52,47 @@ console.log(binarySearch([1, 2, 3, 4, 5, 6, 7, 8, 9], 5));
 
 A complete cash register system that manages transactions, calculates change, and tracks drawer contents. The `CashRegister` class uses a greedy algorithm to provide change using the largest denominations first, and handles all calculations in cents to avoid floating-point errors.
 
-Features:
+**Features:**
 
 - **Transaction Processing**: Validates payment, calculates change, and updates drawer
-- **Change Calculation**: Uses greedy algorithm with largest denominations first
+- **Change Calculation**: Uses greedy algorithm considering both drawer contents and paid funds
 - **Error Handling**: Detects insufficient payment or inability to make proper change
-- **Rollback Support**: Restores drawer state if change cannot be made
 - **Precision**: All calculations done in cents to avoid floating-point issues
+- **Flexible Denominations**: Supports bills and coins (5000, 2000, 1000, 500, 200, 100, 50, 20, 10, 5, 2, 1, 0.5, 0.2, 0.1, 0.05, 0.01)
 
-```
+**Implementation Details:**
+
+The class uses private methods for internal operations:
+
+- `#addToDrawer()`: Adds denominations to the drawer
+- `#removeFromDrawer()`: Removes denominations from the drawer
+- `#convertToCents()`: Converts dollar amounts to cents for precise calculations
+- `#makeChange()`: Calculates optimal change using greedy algorithm, considering both existing drawer contents and newly paid funds
+- `#makePayment()`: Adds customer payment to the drawer
+
+**Public Methods:**
+
+- `processTransaction(price, paidFunds)`: Process a sale and return change
+- `getDrawerContents()`: Get current denominations in drawer
+- `getTotal()`: Get total cash value in drawer
+
+```javascript
 const cashRegister = new CashRegister({
-  100: 5,   // 5 x $100 bills
-  50: 10,   // 10 x $50 bills
-  20: 20,   // 20 x $20 bills
+  100: 5, // 5 x $100 bills
+  50: 10, // 10 x $50 bills
+  20: 20, // 20 x $20 bills
   10: 15,
   5: 20,
-  1: 50
+  1: 50,
+  0.5: 10, // 10 x 50¢ coins
+  0.25: 20, // 20 x 25¢ coins
+  0.1: 50, // 50 x 10¢ coins
+  0.01: 100, // 100 x 1¢ coins
 });
 
 // Process a transaction
-const change = cashRegister.processTransaction(47, { 100: 1 });
-console.log(change);
-// Output: { 50: 1, 1: 3 } - Returns one $50 and three $1 bills
+cashRegister.processTransaction(3, { 1: 5 });
+// Calculates change of $2 and updates drawer
 
 // Exact payment
 const result = cashRegister.processTransaction(20, { 20: 1 });
@@ -81,8 +100,11 @@ console.log(result);
 // Output: "Exact! Here you go."
 
 // Check drawer contents and total
-console.log(cashRegister.getDrawerContents());
-console.log(cashRegister.getTotal());
+const contents = cashRegister.getDrawerContents();
+console.log(contents); // { 100: 5, 50: 10, ... }
+
+const total = cashRegister.getTotal();
+console.log(total); // 1234.56 (example total in dollars)
 ```
 
 ### Collect Odd Values
