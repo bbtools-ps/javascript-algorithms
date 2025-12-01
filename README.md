@@ -142,16 +142,26 @@ console.log(factorial(10));
 
 ### Fibonacci
 
-Calculates the nth Fibonacci number using memoization for optimal performance. The Fibonacci sequence is a series where each number is the sum of the two preceding ones, starting from 1 and 1. The sequence goes: 1, 1, 2, 3, 5, 8, 13, 21, 34, ...
+Two implementations for calculating the nth Fibonacci number. The Fibonacci sequence is a series where each number is the sum of the two preceding ones, starting from 1 and 1. The sequence goes: 1, 1, 2, 3, 5, 8, 13, 21, 34, ...
 
-This implementation uses memoization (caching previously calculated values in a Map) to avoid redundant calculations, making it significantly faster than naive recursion. This allows the function to efficiently calculate even large Fibonacci numbers.
+**fibRecursive(n)** - Uses recursive approach with memoization (caching previously calculated values in a Map) to avoid redundant calculations. This makes it significantly faster than naive recursion while maintaining an elegant recursive structure. Time complexity: O(n), Space complexity: O(n)
+
+**fibTabulation(n)** - Uses dynamic programming tabulation (bottom-up approach) to build the Fibonacci sequence iteratively. This approach is typically faster than the recursive memoized version for larger values as it avoids function call overhead. Time complexity: O(n), Space complexity: O(n)
 
 ```javascript
-console.log(fib(1));  // Output: 1
-console.log(fib(2));  // Output: 1
-console.log(fib(5));  // Output: 5
-console.log(fib(10)); // Output: 55
-console.log(fib(50)); // Output: 12586269025
+// Recursive with memoization
+console.log(fibRecursive(1)); // Output: 1
+console.log(fibRecursive(2)); // Output: 1
+console.log(fibRecursive(5)); // Output: 5
+console.log(fibRecursive(10)); // Output: 55
+console.log(fibRecursive(50)); // Output: 12586269025
+
+// Tabulation (bottom-up)
+console.log(fibTabulation(1)); // Output: 1
+console.log(fibTabulation(2)); // Output: 1
+console.log(fibTabulation(5)); // Output: 5
+console.log(fibTabulation(10)); // Output: 55
+console.log(fibTabulation(100)); // Output: 354224848179262000000
 ```
 
 ### Fix Runts
