@@ -12,22 +12,23 @@ A collection of JavaScript implementations of common algorithms and data structu
 6. [Decimals Fix](#decimals-fix)
 7. [Doubly Linked List](#doubly-linked-list)
 8. [Factorial](#factorial)
-9. [Fix Runts](#fix-runts)
-10. [Graphs](#graphs)
-11. [Merge Sort](#merge-sort)
-12. [Palindrome Checker](#palindrome-checker)
-13. [Priority Queue](#priority-queue)
-14. [Quick Sort](#quick-sort)
-15. [Radix Sort](#radix-sort)
-16. [Roman Numeral Converter](#roman-numeral-converter)
-17. [ROT13](#rot13)
-18. [Segment Image](#segment-image)
-19. [Shortest Path (Dijkstra's Algorithm)](#shortest-path-dijkstras-algorithm)
-20. [Singly Linked List](#singly-linked-list)
-21. [Stacks & Queues](#stacks-queues)
-22. [Telephone Checker](#telephone-checker)
-23. [Title Case](#title-case)
-24. [Tree Traversal](#tree-traversal)
+9. [Fibonacci](#fibonacci)
+10. [Fix Runts](#fix-runts)
+11. [Graphs](#graphs)
+12. [Merge Sort](#merge-sort)
+13. [Palindrome Checker](#palindrome-checker)
+14. [Priority Queue](#priority-queue)
+15. [Quick Sort](#quick-sort)
+16. [Radix Sort](#radix-sort)
+17. [Roman Numeral Converter](#roman-numeral-converter)
+18. [ROT13](#rot13)
+19. [Segment Image](#segment-image)
+20. [Shortest Path (Dijkstra's Algorithm)](#shortest-path-dijkstras-algorithm)
+21. [Singly Linked List](#singly-linked-list)
+22. [Stacks & Queues](#stacks-queues)
+23. [Telephone Checker](#telephone-checker)
+24. [Title Case](#title-case)
+25. [Tree Traversal](#tree-traversal)
 
 ## Details
 
@@ -137,6 +138,20 @@ Factorial is a function that calculates the factorial from a given number that i
 ```
 console.log(factorial(10));
 // Output: 3628800
+```
+
+### Fibonacci
+
+Calculates the nth Fibonacci number using memoization for optimal performance. The Fibonacci sequence is a series where each number is the sum of the two preceding ones, starting from 1 and 1. The sequence goes: 1, 1, 2, 3, 5, 8, 13, 21, 34, ...
+
+This implementation uses memoization (caching previously calculated values in a Map) to avoid redundant calculations, making it significantly faster than naive recursion. This allows the function to efficiently calculate even large Fibonacci numbers.
+
+```javascript
+console.log(fib(1));  // Output: 1
+console.log(fib(2));  // Output: 1
+console.log(fib(5));  // Output: 5
+console.log(fib(10)); // Output: 55
+console.log(fib(50)); // Output: 12586269025
 ```
 
 ### Fix Runts
