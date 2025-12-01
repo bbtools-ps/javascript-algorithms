@@ -14,5 +14,9 @@ function isPalindrome(str) {
   return true;
 }
 
-// console.log(isPalindrome("1 eye for of 1 eye."));
+// console.log(isPalindrome("awesome"));
+// Output: false
+// console.log(isPalindrome("foobar"));
+// Output: false
+// console.log(isPalindrome("eye"));
 // Output: true

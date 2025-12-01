@@ -191,11 +191,16 @@ A divide-and-conquer sorting algorithm that divides the input array into two hal
 
 ### Palindrome Checker
 
-Checks if a word or a sentence is a palindrome. A palindrome is a word or a sentence that's spelled the same way both forward and backward, ignoring the punctuation, case, and spacing. The function works by removing all non-alphanumeric characters (punctuation, spaces, and symbols) and turns everything into the same case (lower or upper case) to check for palindromes. The result of the function is a boolean (true or false) and it depends if the palindrome is found or not.
+Checks if a string is a palindrome (reads the same forwards and backwards). A palindrome is a word or sentence that's spelled the same way both forward and backward, ignoring punctuation, case, and spacing.
 
-```
-console.log(palindrome("1 eye for of 1 eye."));
-// Output: true
+The `isPalindrome` function extracts only alphabetic characters using regex, converts them to lowercase, and then iterates through the string comparing characters from both ends moving toward the center. If any characters don't match, it returns false; otherwise, it returns true.
+
+```javascript
+console.log(isPalindrome("awesome")); // Output: false
+console.log(isPalindrome("foobar")); // Output: false
+console.log(isPalindrome("eye")); // Output: true
+console.log(isPalindrome("A man, a plan, a canal: Panama")); // Output: true
+console.log(isPalindrome("race car")); // Output: true
 ```
 
 ### Priority Queue
