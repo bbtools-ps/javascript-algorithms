@@ -20,15 +20,15 @@
 function fib(n) {
   const results = new Map();
 
-  return (function calc(n) {
+  function calc(n) {
     if (results.has(n)) return results.get(n);
     if (n <= 2) return 1;
-
     const result = calc(n - 1) + calc(n - 2);
     results.set(n, result);
-
     return result;
-  })(n);
+  }
+
+  return calc(n);
 }
 
 // fib(100);
