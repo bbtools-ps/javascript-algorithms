@@ -9,26 +9,27 @@ A collection of JavaScript implementations of common algorithms and data structu
 3. [Binary Search](#binary-search)
 4. [Cash Register](#cash-register)
 5. [Collect Odd Values](#collect-odd-values)
-6. [Decimals Fix](#decimals-fix)
-7. [Doubly Linked List](#doubly-linked-list)
-8. [Factorial](#factorial)
-9. [Fibonacci](#fibonacci)
-10. [Fix Runts](#fix-runts)
-11. [Graphs](#graphs)
-12. [Merge Sort](#merge-sort)
-13. [Palindrome Checker](#palindrome-checker)
-14. [Priority Queue](#priority-queue)
-15. [Quick Sort](#quick-sort)
-16. [Radix Sort](#radix-sort)
-17. [Roman Numeral Converter](#roman-numeral-converter)
-18. [ROT13](#rot13)
-19. [Segment Image](#segment-image)
-20. [Shortest Path (Dijkstra's Algorithm)](#shortest-path-dijkstras-algorithm)
-21. [Singly Linked List](#singly-linked-list)
-22. [Stacks & Queues](#stacks-queues)
-23. [Telephone Checker](#telephone-checker)
-24. [Title Case](#title-case)
-25. [Tree Traversal](#tree-traversal)
+6. [Collect Strings](#collect-strings)
+7. [Decimals Fix](#decimals-fix)
+8. [Doubly Linked List](#doubly-linked-list)
+9. [Factorial](#factorial)
+10. [Fibonacci](#fibonacci)
+11. [Fix Runts](#fix-runts)
+12. [Graphs](#graphs)
+13. [Merge Sort](#merge-sort)
+14. [Palindrome Checker](#palindrome-checker)
+15. [Priority Queue](#priority-queue)
+16. [Quick Sort](#quick-sort)
+17. [Radix Sort](#radix-sort)
+18. [Roman Numeral Converter](#roman-numeral-converter)
+19. [ROT13](#rot13)
+20. [Segment Image](#segment-image)
+21. [Shortest Path (Dijkstra's Algorithm)](#shortest-path-dijkstras-algorithm)
+22. [Singly Linked List](#singly-linked-list)
+23. [Stacks & Queues](#stacks-queues)
+24. [Telephone Checker](#telephone-checker)
+25. [Title Case](#title-case)
+26. [Tree Traversal](#tree-traversal)
 
 ## Details
 
@@ -111,6 +112,43 @@ console.log(total); // 1234.56 (example total in dollars)
 ### Collect Odd Values
 
 A recursive function that collects all odd values from an array of numbers.
+
+### Collect Strings
+
+Three different implementations for collecting all string values from a nested object. Each demonstrates a different traversal approach:
+
+**collectStringsIterative(obj)** - Uses an iterative approach with a stack to traverse the object tree depth-first. This avoids recursion and potential stack overflow issues with deeply nested objects, making it suitable for large or deeply nested data structures.
+
+**collectStringsRecursiveHelper(obj)** - Uses recursion with a helper function pattern. The outer function creates a result array in its scope, and an inner helper function recursively traverses the object, accumulating strings in the shared result array.
+
+**collectStringsRecursivePure(obj)** - Uses pure recursion without helper functions. Each recursive call is self-contained, concatenating results from nested calls. This is a "pure" functional approach where each function call doesn't rely on outer scope variables.
+
+```javascript
+const obj = {
+  stuff: "foo",
+  data: {
+    val: {
+      thing: {
+        info: "bar",
+        moreInfo: {
+          evenMoreInfo: {
+            weMadeIt: "baz",
+          },
+        },
+      },
+    },
+  },
+};
+
+console.log(collectStringsIterative(obj));
+// Output: ["foo", "bar", "baz"]
+
+console.log(collectStringsRecursiveHelper(obj));
+// Output: ["foo", "bar", "baz"]
+
+console.log(collectStringsRecursivePure(obj));
+// Output: ["foo", "bar", "baz"]
+```
 
 ### Decimals Fix
 
