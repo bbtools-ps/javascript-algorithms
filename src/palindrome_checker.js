@@ -14,9 +14,6 @@ function isPalindrome(str) {
   return true;
 }
 
-// console.log(isPalindrome("awesome"));
-// Output: false
-// console.log(isPalindrome("foobar"));
-// Output: false
-// console.log(isPalindrome("eye"));
-// Output: true
+// console.log(isPalindrome("awesome")); // Output: false
+// console.log(isPalindrome("foobar")); // Output: false
+// console.log(isPalindrome("eye")); // Output: true

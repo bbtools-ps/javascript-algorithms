@@ -19,13 +19,8 @@
  * @returns {boolean} True if the format is valid, false otherwise
  */
 function telephoneCheck(str) {
-  return /^[1]*(\s|\()*\d{3}(\)|\-|\s)*\d{3}(\s|\-)*\d{4}$/.test(str) &&
-    /[(]/.test(str) === /[)]/.test(str)
-    ? true
-    : false;
+  return /^[1]*(\s|\()*\d{3}(\)|\-|\s)*\d{3}(\s|\-)*\d{4}$/.test(str) && /[(]/.test(str) === /[)]/.test(str) ? true : false;
 }
 
-// console.log(telephoneCheck("1 555)555-5555"));
-// Output: false
-// console.log(telephoneCheck("1 555-555-5555"));
-// Output: true
+// console.log(telephoneCheck("1 555)555-5555")); // Output: false
+// console.log(telephoneCheck("1 555-555-5555")); // Output: true

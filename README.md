@@ -4,34 +4,54 @@ A collection of JavaScript implementations of common algorithms and data structu
 
 ## Contents
 
-1. [Binary Heaps](#binary-heaps)
-2. [Binary Search Tree](#binary-search-tree)
-3. [Binary Search](#binary-search)
-4. [Cash Register](#cash-register)
-5. [Collect Odd Values](#collect-odd-values)
-6. [Collect Strings](#collect-strings)
-7. [Decimals Fix](#decimals-fix)
-8. [Doubly Linked List](#doubly-linked-list)
-9. [Factorial](#factorial)
-10. [Fibonacci](#fibonacci)
-11. [Fix Runts](#fix-runts)
-12. [Graphs](#graphs)
-13. [Merge Sort](#merge-sort)
-14. [Palindrome Checker](#palindrome-checker)
-15. [Priority Queue](#priority-queue)
-16. [Quick Sort](#quick-sort)
-17. [Radix Sort](#radix-sort)
-18. [Roman Numeral Converter](#roman-numeral-converter)
-19. [ROT13](#rot13)
-20. [Segment Image](#segment-image)
-21. [Shortest Path (Dijkstra's Algorithm)](#shortest-path-dijkstras-algorithm)
-22. [Singly Linked List](#singly-linked-list)
-23. [Stacks & Queues](#stacks-queues)
-24. [Telephone Checker](#telephone-checker)
-25. [Title Case](#title-case)
-26. [Tree Traversal](#tree-traversal)
+1. [Anagram Checker](#anagram-checker)
+2. [Binary Heaps](#binary-heaps)
+3. [Binary Search Tree](#binary-search-tree)
+4. [Binary Search](#binary-search)
+5. [Cash Register](#cash-register)
+6. [Collect Odd Values](#collect-odd-values)
+7. [Collect Strings](#collect-strings)
+8. [Decimals Fix](#decimals-fix)
+9. [Doubly Linked List](#doubly-linked-list)
+10. [Factorial](#factorial)
+11. [Fibonacci](#fibonacci)
+12. [Fix Runts](#fix-runts)
+13. [Graphs](#graphs)
+14. [Merge Sort](#merge-sort)
+15. [Palindrome Checker](#palindrome-checker)
+16. [Priority Queue](#priority-queue)
+17. [Quick Sort](#quick-sort)
+18. [Radix Sort](#radix-sort)
+19. [Roman Numeral Converter](#roman-numeral-converter)
+20. [ROT13](#rot13)
+21. [Segment Image](#segment-image)
+22. [Shortest Path (Dijkstra's Algorithm)](#shortest-path-dijkstras-algorithm)
+23. [Singly Linked List](#singly-linked-list)
+24. [Stacks & Queues](#stacks-queues)
+25. [Telephone Checker](#telephone-checker)
+26. [Title Case](#title-case)
+27. [Tree Traversal](#tree-traversal)
 
 ## Details
+
+### Anagram Checker
+
+Checks if two strings are anagrams of each other. An anagram is a word or phrase formed by rearranging the letters of another word or phrase, using all the original letters exactly once. The `areAnagrams` function performs a case-insensitive comparison by counting character frequencies in both strings.
+
+The algorithm works by:
+
+1. First checking if the strings have different lengths (quick exit if true)
+2. Converting both strings to lowercase for case-insensitive comparison
+3. Building a character frequency map for the first string
+4. Decrementing counts while iterating through the second string
+5. Verifying all counts are zero at the end
+
+```javascript
+console.log(areAnagrams('cat', 'tac')); // Output: true
+console.log(areAnagrams('listen', 'silent')); // Output: true
+console.log(areAnagrams('hello', 'world')); // Output: false
+console.log(areAnagrams('Dormitory', 'Dirty room')); // Output: false (spaces matter)
+```
 
 ### Binary Heaps
 
@@ -125,14 +145,14 @@ Three different implementations for collecting all string values from a nested o
 
 ```javascript
 const obj = {
-  stuff: "foo",
+  stuff: 'foo',
   data: {
     val: {
       thing: {
-        info: "bar",
+        info: 'bar',
         moreInfo: {
           evenMoreInfo: {
-            weMadeIt: "baz",
+            weMadeIt: 'baz',
           },
         },
       },
@@ -234,11 +254,11 @@ Checks if a string is a palindrome (reads the same forwards and backwards). A pa
 The `isPalindrome` function extracts only alphabetic characters using regex, converts them to lowercase, and then iterates through the string comparing characters from both ends moving toward the center. If any characters don't match, it returns false; otherwise, it returns true.
 
 ```javascript
-console.log(isPalindrome("awesome")); // Output: false
-console.log(isPalindrome("foobar")); // Output: false
-console.log(isPalindrome("eye")); // Output: true
-console.log(isPalindrome("A man, a plan, a canal: Panama")); // Output: true
-console.log(isPalindrome("race car")); // Output: true
+console.log(isPalindrome('awesome')); // Output: false
+console.log(isPalindrome('foobar')); // Output: false
+console.log(isPalindrome('eye')); // Output: true
+console.log(isPalindrome('A man, a plan, a canal: Panama')); // Output: true
+console.log(isPalindrome('race car')); // Output: true
 ```
 
 ### Priority Queue
