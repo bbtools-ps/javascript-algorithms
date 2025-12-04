@@ -115,7 +115,7 @@ function convertToRoman(num) {
     result += stringRepeat(NUMBERS[i].roman, count);
 
     // ES2015
-    // result += numbers[i].roman.repeat(quotient);
+    // result += numbers[i].roman.repeat(count);
 
     remainingNum -= count * NUMBERS[i].value;
   }

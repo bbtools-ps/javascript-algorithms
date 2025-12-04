@@ -29,7 +29,7 @@ function areAnagrams(str1, str2) {
     charCount[char]--;
   }
 
-  for (key in charCount) {
+  for (const key in charCount) {
     if (charCount[key] !== 0) return false;
   }
 
