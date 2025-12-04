@@ -5,29 +5,11 @@
  * @returns string - rotated (shifted) letters
  */
 function rot13(str) {
-  const input = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
-  const output = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-  let strArr = str.split("");
-
-  let result = strArr.map((item) => {
-    let index = input.indexOf(item);
-    if (index !== -1) {
-      return output[index];
-    }
-    return item;
+  return str.replace(/[A-Za-z]/g, (char) => {
+    const code = char.charCodeAt(0);
+    const base = code >= 97 ? 97 : 65; // 'a' or 'A'
+    return String.fromCharCode(((code - base + 13) % 26) + base);
   });
-
-  return result.join("");
-
-  // using for loop
-  // for (let i = 0; i < strArr.length; i++) {
-  //   let index = input.indexOf(strArr[i])
-  //   if (index !== -1) {
-  //     strArr[i] = output[index];
-  //   }
-  // }
-
-  // return strArr.join("");
 }
 
 // console.log(rot13("SERR CVMMN!"));
